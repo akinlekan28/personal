@@ -8,12 +8,57 @@ body {
 
   .trial{
     border-radius: 60%;
-    border: solid 7px #ff9801;
-    height: 280px;
-    width: 280px;
+    border: solid 10px #ff9801;
+    height: 270px;
+    width: 270px;
+    opacity: 0.9;
+    animation: spin 2s linear infinite;
+    border-top: 10px solid #ff9801;
+    border-left: 10px solid #ff9801;
+    border-bottom: 10px solid #2A0A49;
   }
 
-  .hover-redo:hover{
+  .refix{
+    border-radius: 12px 12px 12px 12px;
+  }
+
+  @-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }
+
+  .hover-redo{
     color: #ff9801;
   }
 
