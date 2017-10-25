@@ -22,21 +22,36 @@
           return false;
         } else {
           e.preventDefault();
+
+          submitForm();
+        }
+      });
+
+      function submitForm(){
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
+
           $.ajax({
             url:'form-process.php',
             type:"POST",
-            data:$('form').serialize(),
-            success: function(){
-              $('.form-send-callback').html('<span class="lnr lnr-checkmark-circle"></span> Message Sent Successfully').css({
-                color:'#72c02c',
-                marginTop:"10px",
-                fontWeight:"700"
-              }).fadeOut(5000);
-              $('.form-contact .form-control').val("");
+            data:"name=" + name + "&email=" + email + "&message=" + message,
+            success: function(text){
+              if (text == "success"){
+                $('.form-send-callback').html('<span class="lnr lnr-checkmark-circle"></span> Message Sent Successfully').css({
+                  color:'#72c02c',
+                  marginTop:"10px",
+                  fontWeight:"700"
+                }).fadeOut(5000);
+                $('.form-contact .form-control').val("");
+              } else {
+                alert("Something went wrong");
+              }
+          
             }
           });
-        }
-      })
+      }
     
       /**********************\
       // nav toggler

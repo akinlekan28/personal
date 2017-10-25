@@ -1441,7 +1441,8 @@ input, textarea {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 15px; }
+  padding-bottom: 15px; 
+}
 
 .con-icon {
   margin-right: 15px; }
